@@ -23,6 +23,6 @@ object GenomicRangeQuery {
       i <- Range(0, P.size).toArray
       val (start,end) = (P(i), Q(i)) 
       val dnaSubSet = dnaNumeric.slice(start, end+1).toArray
-    } yield (dnaSubSet.sortWith((a,b) => a < b).head)
+    } yield (dnaSubSet.min)
   }
 }
